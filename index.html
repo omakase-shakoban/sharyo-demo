@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- アプリの範囲は index.html（整備工場用 shop.html と別のアプリにするため）。フォルダの住所で開いたら index.html にする -->
+<script>if (location.pathname.endsWith("/")) location.replace("index.html" + location.search + location.hash);</script>
 <meta name="theme-color" content="#2C4966">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/favicon-32.png?v=2" sizes="32x32" type="image/png">

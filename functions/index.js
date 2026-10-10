@@ -71,7 +71,7 @@ async function claim(key, names, info) {
 // 無効になった端末（アプリを消した・許可を取り消した など）
 const DEAD = new Set(["messaging/registration-token-not-registered", "messaging/invalid-registration-token"]);
 
-const APP_URL = { staff: "./", shop: "./shop.html" };
+const APP_URL = { staff: "./index.html", shop: "./shop.html" }; // 社員用と整備工場用は別のアプリ（manifest の scope が別）
 // 端末（{ token, app }）を、開くページごとに分けて送る
 async function send(targets, msg) {
   for (const app of Object.keys(APP_URL)) {
