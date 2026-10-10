@@ -2,8 +2,8 @@
 // - 修理：依頼が来た車を「預かる」→ 修理中、「修理完了」→ 完了・置き場所を記録
 // - 車検：30日以内の車を「預かる」→ 車検中（社員用PCの「車検に出す」と同じ）、「車検完了」→ 新しい満了日（「車検から戻す」と同じ）
 // - データは社員用アプリと同じ Firestore。押したらすぐ社員用アプリにも出る
-import { firebaseConfig, FIREBASE_SDK_VERSION, VAPID_KEY } from "./firebase-config.js";
-import { COMPANY } from "./company-config.js"; // 会社ごとにちがう値（会社の名前・整備工場の名前など）
+import { firebaseConfig, FIREBASE_SDK_VERSION, VAPID_KEY } from "../firebase-config.js";
+import { COMPANY } from "../company-config.js"; // 会社ごとにちがう値（会社の名前・整備工場の名前など）
 
 const $ = id => document.getElementById(id);
 const SHOP = COMPANY.shopName || "整備工場"; // 整備工場の名前（右上の表示・操作した人の記録に使う）

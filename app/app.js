@@ -1,6 +1,6 @@
 // 社用車管理アプリ（段階1: 車両一覧・詳細・PC版の登録／修正／廃車・Firestore同期・サンプル投入）
-import { firebaseConfig, FIREBASE_SDK_VERSION, VAPID_KEY } from "./firebase-config.js";
-import { COMPANY } from "./company-config.js"; // 会社ごとにちがう値（会社の名前・整備工場の名前など）は、全部ここから
+import { firebaseConfig, FIREBASE_SDK_VERSION, VAPID_KEY } from "../firebase-config.js";
+import { COMPANY } from "../company-config.js"; // 会社ごとにちがう値（会社の名前・整備工場の名前など）は、全部ここから
 
 const $ = id => document.getElementById(id);
 
@@ -36,9 +36,9 @@ const db = initializeFirestore(fbApp, { localCache: persistentLocalCache({ tabMa
 const storage = getStorage(fbApp);
 
 /* ---------- 定数 ---------- */
-const APP_VERSION = "27"; // 版の番号（名前のメニューの下に出す）。sw.js の CACHE（sharyo-v○○）と同じ番号にする
+const APP_VERSION = "28"; // 版の番号（名前のメニューの下に出す）。app/sw.js・shop/sw.js の CACHE（sharyo-app-v○○・sharyo-shop-v○○）と同じ番号にする
 const TYPES = ["トラック", "バン", "普通車"];
-const SHOP_NAME = COMPANY.shopName || "整備工場"; // 整備工場の名前。専用ページは shop.html
+const SHOP_NAME = COMPANY.shopName || "整備工場"; // 整備工場の名前。専用ページは shop/
 // 見本か。見本では、サンプルの車も空き表・整備工場の画面に出す（会社用では出さない）
 const DEMO = !!COMPANY.demo;
 const LABEL = { free: "空き", use: "使用中", fix: "修理中", own: "専用", insp: "車検中" };
